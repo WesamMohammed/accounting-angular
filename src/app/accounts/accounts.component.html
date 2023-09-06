@@ -1,0 +1,141 @@
+
+<div>
+  <section>
+    <div class="row">
+      <div class="col-6">
+        <h1> Accounts  </h1>
+      </div>
+      <div *ngIf="canCreat()" class="col-6 text-right">
+        <a href="javascript:;"
+          class="btn btn-primary"
+          (click)="showModal(AccountsModal)"
+        >
+
+          <i class="fa fa-plus-square"></i>
+        Create
+        </a>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+<div>
+
+  <ul class="active">
+    <ng-container *ngFor="let account of AccountsTree"  [ngTemplateOutlet]="treeNode" [ngTemplateOutletContext]="{$implicit:account}">
+
+    </ng-container>
+
+  </ul>
+
+  <ng-template #treeNode let-data>
+    <li>
+      <span class="caret" *ngIf="data.children.length>0; else sp" (click)="toggle($event)">{{data.name}}</span>
+      <ng-template #sp>
+        <span>
+          {{data.name}}
+        </span>
+      </ng-template>
+      <ng-container *ngIf="data.children">
+        <ul class="nested">
+          <ng-container *ngFor="let child of data.children" [ngTemplateOutlet]="treeNode" [ngTemplateOutletContext]="{$implicit:child}">
+
+          </ng-container>
+
+        </ul>
+      </ng-container>
+
+    </li>
+
+
+  </ng-template>
+
+</div>
+
+
+    <div bsModal #AccountsModal="bs-modal" class="modal fade" tabindex="-1"
+    role="dialog" aria-labelledby="dialog-sizes-name1">
+ <div class="modal-dialog modal-lg">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4 id="dialog-sizes-name1" class="modal-title pull-left"> Add Account</h4>
+       <button type="button" class="btn-close close pull-right" (click)="modalRef.hide()" aria-label="Close">
+         <span aria-hidden="true" class="visually-hidden">&times;</span>
+       </button>
+     </div>
+  <div class="modal-body">
+
+
+
+
+
+          <form #form="ngForm" (ngSubmit)="save()">
+            <div class="row">
+              <div class="col-lg-6">
+              <div class="form-group col">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Account Name" class="form-control" id="name" name="Name"[(ngModel)]="newAccount.name">
+              </div>
+              <div class="form-group col">
+                <label for="">Parent Account</label>
+              <select class="form-control" id="parent" name="parent" [(ngModel)]="newAccount.parentId">
+                <option  *ngFor="let Parent of parents" [ngValue]="Parent.id">
+                  {{Parent.name}}
+                </option>
+              </select>
+
+
+              </div>
+              <div class="form-group col">
+                <label for="">Main Or Sub</label>
+                <div class="form-control">
+                  <label for="">
+                    <input type="radio" value="1" name="accountType" [(ngModel)]="accountType"> Sub
+                    <input type="radio" value="2" name="accountType" [(ngModel)]="accountType"> Main
+                  </label>
+                </div>
+
+              </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group col">
+                  <label for="number">number</label>
+                  <input type="text" class="form-control" id="number" name="number" [(ngModel)]="newAccount.accountNumber">
+                </div>
+                <div class="form-group col">
+                  <label for="">Account type</label>
+                <select class="form-control" id="accountttype" name="acccountype" [(ngModel)]="newAccount.accountType">
+                  <option  *ngFor="let AccountType of AccountsType" [ngValue]="AccountType.id">
+                    {{AccountType.type}}
+                  </option>
+                </select>
+
+
+                </div>
+                <div class="form-group col">
+                  <label for="">Appear In</label>
+                <select class="form-control" id="appear" name="appear" [(ngModel)]="newAccount.appearIn">
+                  <option  *ngFor="let appear of apperIn" [ngValue]="appear.id">
+                    {{appear.appear}}
+                  </option>
+                </select>
+
+
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+
+
+
+
+
+
+  </div>
+
+
+  </div>

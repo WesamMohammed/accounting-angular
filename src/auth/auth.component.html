@@ -1,0 +1,110 @@
+﻿<div class="" >
+  <h2 class="text-center mb-3"> LogIn </h2>
+  <form novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="login()">
+    <div class="imgcontainer">
+      <img src="../assets/auth.png" alt="Avatar" class="avatar">
+    </div>
+  <div class="container">
+    <div class="">
+      <div class="">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="Email"
+          [(ngModel)]="authService.authenticateModel.Email"
+          placeholder="Email"
+          required
+
+
+        />
+        <!-- <div class="input-group-append">
+          <div class="input-group-text">
+            <span class="fas fa-user"></span>
+          </div>
+        </div> -->
+      </div>
+      <!-- <abp-validation-summary
+        [control]="userNameOrEmailAddressModel"
+        [controlEl]="userNameOrEmailAddressEl"
+      ></abp-validation-summary> -->
+    </div>
+    <div class="">
+      <div class="">
+        <label for="password">Passward</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="authService.authenticateModel.password"
+          [placeholder]="'Password'"
+          required
+
+
+        />
+        <!-- <div class="input-group-append">
+          <div class="input-group-text">
+            <span class="fas fa-lock"></span>
+          </div>
+        </div> -->
+      </div>
+      <!-- <abp-validation-summary
+        [control]="passwordModel"
+        [controlEl]="passwordEl"
+      ></abp-validation-summary> -->
+    </div>
+    <div class="form-group row">
+      <!-- <div class="col-md-8">
+
+      </div> -->
+      <div class="">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          [disabled]="!loginForm.form.valid || submitting"
+        >
+          LogIn
+        </button>
+      </div>
+    </div>
+  </div>
+  </form>
+  <!-- <p *ngIf="isSelfRegistrationAllowed" class="mb-1">
+    <a [routerLink]="['../register']">
+      <i class="fa fa-plus-circle"></i> {{ "Register" | localize }}
+    </a>
+  </p> -->
+</div>
+
+
+
+
+
+
+<!-- <h2>Login Form</h2>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> -->
+
+

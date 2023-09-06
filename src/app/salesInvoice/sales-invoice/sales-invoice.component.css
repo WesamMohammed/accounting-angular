@@ -1,0 +1,71 @@
+.remove{
+  padding-top: 18px;
+}
+.save{
+  position:absolute;
+  bottom: 0px;
+
+}
+
+.text-center{
+  text-align: center;
+}
+
+.menu-item{
+  cursor: pointer;
+}
+.menu-item:havore{
+
+
+}
+.menu-items li:hover{
+  background-color: white ;
+  color: black;
+}
+.selected{
+  background-color: blue;
+  color: aliceblue;
+}
+
+ul,#myUL{
+  list-style-type: none;
+}
+#myUL{
+  margin: 0;
+  padding: 0;
+
+}
+.caret{
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+.caret::before{
+  content: "\25B2";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+.caret-down::before{
+  transform: rotate(180deg);
+
+}
+.nested{
+  display: none;
+}
+.active{
+  display: block;
+}
+.sort{
+  cursor: pointer;
+}
+.sort-up:before {
+  content: "\2191";
+}
+
+.sort-down:before {
+  content: "\2193";
+}

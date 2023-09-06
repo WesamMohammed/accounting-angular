@@ -1,0 +1,54 @@
+/* .logo img {
+  max-width: 112px;
+}
+body{
+  direction: rtl !important;
+}
+*{ margin:0; padding:0;}
+.invoice-wrap{ width:700px; margin:0 auto; background:#FFF; color:#000;}
+.invoice-inner{ margin:0 30px; padding:20px 0}
+.bold{
+  font-weight: bold !important;
+}
+.f_table{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.s_table{
+  margin-top: 5px;
+  width: 100%;
+  font-size: 15px;
+}
+.t_table{
+  margin-top: 20px;
+  width: 100%;
+}
+.t_table tr:first-child{
+  background: #e5e5e5;
+}
+.t_table,.t_table th,.t_table td {
+  border: 1px solid #555555;
+  border-collapse: collapse;
+  padding: 3px 5px 3px 5px;
+}
+.total_table td {
+  border: 1px solid #555555;
+  border-collapse: collapse;
+  padding: 3px 5px 3px 5px;
+}
+.total_table{
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  border-collapse: collapse;
+  background: #e5e5e5;
+}
+.rtl .pages-head,
+      .ltr .pages-head,
+      .rtl .pages-head-s2020,
+      .ltr .pages-head-s2020 {
+          left: 0;
+          right: 0;
+      } */

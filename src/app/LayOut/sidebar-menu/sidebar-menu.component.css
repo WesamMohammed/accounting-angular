@@ -1,0 +1,48 @@
+.menu-item{
+  cursor: pointer;
+}
+.menu-item:havore{
+
+
+}
+.menu-items li:hover{
+  background-color: white ;
+  color: black;
+}
+.selected{
+  background-color: blue;
+  color: aliceblue;
+}
+
+ul,#myUL{
+  list-style-type: none;
+}
+#myUL{
+  margin: 0;
+  padding: 0;
+
+}
+.caret{
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+.caret::before{
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+.caret-down::before{
+  transform: rotate(90deg);
+
+}
+.nested{
+  display: none;
+}
+.active{
+  display: block;
+}

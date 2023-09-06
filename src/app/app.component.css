@@ -1,0 +1,23 @@
+
+h1, h3 {
+  color: green;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.mat-tree {
+  background: transparent;
+}
+
+.mat-tree-node {
+  color: black;
+}
+.main-box{
+  height: 100%;
+  background-color: #80808066;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}

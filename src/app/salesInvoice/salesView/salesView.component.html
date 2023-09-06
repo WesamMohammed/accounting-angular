@@ -1,0 +1,245 @@
+
+  <!---->
+  <div
+    _ngcontent-serverapp-c262=""
+    id="body_box"
+    class="invoice-wrap ng-star-inserted"
+    style="background: rgb(255, 255, 255); padding: 20px"
+  >
+    <div
+      _ngcontent-serverapp-c262=""
+      id="PrintableContent"
+      style="background: rgb(255 255 255)"
+    >
+      <div _ngcontent-serverapp-c262="" style="padding-top: 10px"></div>
+      <div
+        _ngcontent-serverapp-c262=""
+        style="
+          margin: 0 10px;
+          padding: 10px;
+          color: #555555;
+          border: 3px double #555555;
+        "
+      >
+        <div
+          _ngcontent-serverapp-c262=""
+          style="padding-bottom: 1px; border-bottom: 3px solid #555555"
+        >
+          <div
+            _ngcontent-serverapp-c262=""
+            style="
+              direction: rtl;
+              border-bottom: 1px solid #070767;
+              padding-bottom: 5px;
+            "
+          >
+            <table
+              _ngcontent-serverapp-c262=""
+              width="100%"
+              cellpadding="0"
+              cellspacing="0"
+              style="border: 0"
+
+            >
+              <tbody _ngcontent-serverapp-c262="">
+                <tr _ngcontent-serverapp-c262="">
+                  <td
+                    _ngcontent-serverapp-c262=""
+                    style="
+                      text-align: center;
+                      direction: rtl;
+                      width: 37%;
+                      border: 0;
+                    "
+                  >
+                    <div _ngcontent-serverapp-c262="" class="logo">
+                      <span
+                        _ngcontent-serverapp-c262=""
+                        style="font-family: arial, helvetica, sans-serif"
+                        >
+
+                        Date:{{salesInvoice?.date}}
+                        </span>
+                        <span>
+                          Customer:{{salesInvoice?.customer.name}}
+                        </span>
+
+                    </div>
+                  </td>
+                  <td
+                    _ngcontent-serverapp-c262=""
+                    style="text-align: center; border: 0"
+                  >
+                  <p *ngIf="operationType==0">
+            فاتورة مبيعات :{{salesInvoice?.invoiceType}}
+                  </p>
+                  <p *ngIf="operationType==1">
+                    فاتورة مرتجع مبيعات :{{salesInvoice?.invoiceType}}
+                  </p>
+
+                    <p
+                      _ngcontent-serverapp-c262=""
+                      style="
+                        text-align: center;
+                        border: 1px solid #555555;
+                        color: red;
+                        font-weight: bold;
+                        font-size: 16px;
+                        margin: auto;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 50%;
+                      "
+                    >
+
+                      <span
+                        _ngcontent-serverapp-c262=""
+                        style="font-family: arial, helvetica, sans-serif"
+                        >#saleId:{{salesInvoice?.id}}</span
+                      >
+                    </p>
+                  </td>
+                  <td
+                    _ngcontent-serverapp-c262=""
+                    style="width: 37%; border: 0; vertical-align: top"
+                  >
+                    <div
+                      _ngcontent-serverapp-c262=""
+                      style="text-align: center; line-height: 1.6"
+                    >
+                      <span
+                        _ngcontent-serverapp-c262=""
+                        style="
+                          font-family: arial, helvetica, sans-serif;
+                          font-size: 27px;
+                        "
+                        ><strong
+                          _ngcontent-serverapp-c262=""
+                          class="companyName"
+                          style="
+                            font-size: 27px;
+                            line-height: 1;
+                            padding: 0;
+                            font-family: pnu !important;
+                          "
+                          >AmanSoft Compony</strong
+                        ></span
+                      >
+                    </div>
+                    <div
+                      _ngcontent-serverapp-c262=""
+                      style="
+                        direction: ltr;
+                        text-align: center;
+                        margin-top: 3px;
+                        font-size: 10px;
+                      "
+                    >
+                      <div _ngcontent-serverapp-c262="">
+                        <span
+                          _ngcontent-serverapp-c262=""
+                          style="font-family: arial, helvetica, sans-serif"
+                          >774783851</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      _ngcontent-serverapp-c262=""
+                      style="
+                        direction: ltr;
+                        text-align: center;
+                        margin-top: 3px;
+                        font-size: 10px;
+                      "
+                    >
+                      <div _ngcontent-serverapp-c262="">
+                        <span
+                          _ngcontent-serverapp-c262=""
+                          style="font-family: arial, helvetica, sans-serif"
+                          >address:Taiz</span
+                        >
+                      </div>
+                      <div _ngcontent-serverapp-c262="">
+                        <span
+                          _ngcontent-serverapp-c262=""
+                          style="font-family: arial, helvetica, sans-serif"
+                          >Casher:wesam
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          _ngcontent-serverapp-c262=""
+          style="direction: ltr; margin-top: 10px"
+        >
+          <table
+            _ngcontent-serverapp-c262=""
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="border: 0;text-align: center;"
+
+          >
+          <thead>
+            <tr>
+              <th>
+                #No
+              </th>
+
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    unit
+                </th>
+                <th>
+                    price
+                </th>
+                <th>
+                    quantity
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+          </thead>
+            <tbody  _ngcontent-serverapp-c262="">
+              <tr *ngFor="let detail of salesInvoice?.invoiceDetails; let i=index" _ngcontent-serverapp-c262="">
+                <td>{{i+1}}</td>
+
+              <td>
+                {{detail.product.name}}
+              </td>
+              <td>
+                {{detail.productUnit.unitName}}
+              </td>
+              <td>
+                {{detail.unitPrice}}
+              </td>
+              <td>
+                {{detail.quantity}}
+              </td>
+
+              <td>
+                {{detail.totalPrice}}
+              </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      
+      </div>
+      <h4>Total: {{salesInvoice.total}}   </h4>
+    </div>
+
+  </div>
+  <!---->
+
