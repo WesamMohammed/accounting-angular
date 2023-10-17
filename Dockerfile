@@ -2,11 +2,11 @@
 FROM node:lts AS build
 
 # Set the working directory inside the container
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 # Copy package.json and package-lock.json files to leverage Docker cache
-COPY package.json package-lock.json ./
+COPY package.json  /app/
 
 # Install project dependencies
 RUN npm install
