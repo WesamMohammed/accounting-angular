@@ -9,7 +9,7 @@ RUN npm install -g @angular/cli@14.2.12
 COPY package.json package-lock.json ./
 
 # Install project dependencies
-RUN npm install 
+RUN npm install --omit=dev
 
 
 # Copy the entire project to the container
