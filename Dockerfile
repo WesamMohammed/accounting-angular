@@ -17,7 +17,7 @@ COPY . .
 
 # Build the Angular application with production configuration
 
-RUN npm run build --prod
+RUN npm run build 
 
 # Use a smaller base image for the final application
 FROM nginx:alpine
