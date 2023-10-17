@@ -6,11 +6,10 @@ Dockerfile.prod
 .git
 .gitignore
 *.md
-*.yml
-*.yaml
+
 
 *.lock
 *.log
-*.config.js
+
 e2e
-src
+
