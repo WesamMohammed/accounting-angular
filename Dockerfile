@@ -6,7 +6,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json files to leverage Docker cache
-COPY package*.json ./
+COPY package.json package-lock ./
 
 # Install project dependencies
 RUN npm install
