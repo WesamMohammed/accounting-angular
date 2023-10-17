@@ -4,7 +4,7 @@ FROM node:14.20.0 AS build
 # Set the working directory inside the container
 RUN mkdir -p /app
 WORKDIR /app
-
+RUN npm install -g @angular/cli
 # Copy package.json and package-lock.json files to leverage Docker cache
 COPY package.json  /app/
 
@@ -16,7 +16,7 @@ RUN npm install --omit=dev
 COPY . .
 
 # Build the Angular application with production configuration
-RUN npm install -g @angular/cli
+
 RUN npm run build --prod
 
 # Use a smaller base image for the final application
