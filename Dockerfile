@@ -1,5 +1,5 @@
 # Use an official Node.js LTS (Long Term Support) image as the base image
-FROM node:14.20.0 AS build
+FROM node:16.17.0 AS build
 
 # Set the working directory inside the container
 RUN mkdir -p /app
