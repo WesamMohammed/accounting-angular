@@ -1,15 +1,12 @@
 node_modules
-npm-debug.log
-Dockerfile
-Dockerfile.prod
-.dockerignore
+
 .git
 .gitignore
 *.md
 
 
-*.lock
-*.log
+
+
 
 e2e
 
