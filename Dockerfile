@@ -6,7 +6,7 @@ RUN mkdir -p /app
 WORKDIR /app
 RUN npm install -g @angular/cli@14.2.12
 # Copy package.json and package-lock.json files to leverage Docker cache
-COPY package.json  /app/
+COPY package*.json  /app/
 
 # Install project dependencies
 RUN npm install --omit=dev
