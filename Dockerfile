@@ -16,6 +16,7 @@ RUN npm install --omit=dev
 COPY . .
 
 # Build the Angular application with production configuration
+RUN npm install -g @angular/cli
 RUN npm run build --prod
 
 # Use a smaller base image for the final application
