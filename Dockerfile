@@ -4,12 +4,12 @@ FROM node:16.17.0 AS build
 # Set the working directory inside the container
 RUN mkdir -p /app
 WORKDIR /app
-RUN npm install -g @angular/cli@14.2.12
+RUN npm install -g @angular/cli
 # Copy package.json and package-lock.json files to leverage Docker cache
 COPY package*.json  /app/
 
 # Install project dependencies
-RUN npm install --omit=dev
+RUN npm install 
 
 
 # Copy the entire project to the container
