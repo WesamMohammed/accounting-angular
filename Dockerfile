@@ -2,6 +2,7 @@
 FROM node:lts AS build
 
 # Set the working directory inside the container
+RUN makdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json files to leverage Docker cache
