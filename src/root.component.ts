@@ -4,7 +4,7 @@ import { AfterViewInit, Component, OnInit, ViewChild, ElementRef, Pipe } from '@
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 //import { Observable } from 'rxjs';
 @Component({
-    selector: 'app-root',
+    selector: 'root',
     template: `
 
     <router-outlet></router-outlet>`,
