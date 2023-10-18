@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ApiService } from './SharedService/api.service';
 import { NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
-import {MatTreeModule} from '@angular/material/tree'
+//import {MatTreeModule} from '@angular/material/tree'
 import {MatIconModule} from '@angular/material/icon'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,11 +55,11 @@ SalesViewComponent,
    CommonModule,
     AppRoutingModule,
    // BrowserAnimationsModule,
-    MatTreeModule,
+    
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    MatSelectModule,
+    //MatSelectModule,
     NgbModule,
     ModalModule.forChild(),
 
