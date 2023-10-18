@@ -6,18 +6,18 @@ RUN mkdir -p /app
 WORKDIR /app
 RUN npm install -g @angular/cli@14.2.0
 # Copy package.json and package-lock.json files to leverage Docker cache
-COPY package.json package-lock.json ./
+COPY . .
 
 # Install project dependencies
 RUN npm install 
 
 
 # Copy the entire project to the container
-COPY . .
+#COPY . .
 
 # Build the Angular application with production configuration
 
-RUN npm run build 
+RUN npm run build --prod
 
 # Use a smaller base image for the final application
 FROM nginx:alpine
