@@ -9,7 +9,7 @@ RUN npm install -g @angular/cli@15.2.10 --force
 COPY . .
 
 # Install project dependencies
-RUN npm install --foce 
+RUN npm install --legacy-peer-deps 
 
 
 # Copy the entire project to the container
