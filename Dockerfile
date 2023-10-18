@@ -12,7 +12,7 @@ RUN npm install --legacy-peer-deps
 # Install project dependencies
 
 COPY . .
-RUN npx ng build --prod
+RUN npx ng build 
 
 # Copy the entire project to the container
 #COPY . .
