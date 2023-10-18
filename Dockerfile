@@ -9,7 +9,7 @@ RUN npm install -g @angular/cli@15.2.10 --force
 COPY . .
 
 # Install project dependencies
-RUN npm install 
+RUN npm install --foce 
 
 
 # Copy the entire project to the container
