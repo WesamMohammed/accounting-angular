@@ -4,7 +4,7 @@ FROM node:18.17.0 AS build
 # Set the working directory inside the container
 RUN mkdir -p /app
 WORKDIR /app
-RUN npm install -g @angular/cli@14.2.0
+RUN npm install -g @angular/cli@15.2.10
 # Copy package.json and package-lock.json files to leverage Docker cache
 COPY . .
 
