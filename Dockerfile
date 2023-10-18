@@ -4,22 +4,24 @@ FROM node:18.17.0 AS build
 # Set the working directory inside the container
 RUN mkdir -p /app
 WORKDIR /app
-RUN npm install -g @angular/cli@15.2.10 --force
+COPY package.json package-lock.json ./
+RUN npm install --legacy-peer-deps
 # Copy package.json and package-lock.json files to leverage Docker cache
-COPY . .
+
 
 # Install project dependencies
-RUN npm install --legacy-peer-deps 
 
+COPY . .
+RUN npx ng build --prod
 
 # Copy the entire project to the container
 #COPY . .
 
 # Build the Angular application with production configuration
 
-RUN npm run build --prod
+#RUN npm run build --prod
 
-# Use a smaller base image for the final application
+
 FROM nginx:alpine
 
 # Copy the built Angular app from the previous stage to the NGINX web server directory
