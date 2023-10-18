@@ -11,8 +11,9 @@ import { Observable, throwError as _observableThrow, of as _observableOf, throwE
 import { mergeMap as _observableMergeMap, catchError as _observableCatch, catchError } from 'rxjs/operators';
 import { Account } from '../Models/Accounts';
 import {  Inject, Optional, InjectionToken } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-const BaseUrl:string="http://20.173.40.76:3000/api";
+const BaseUrl:string=`${environment.baseUrl}/api`;
 
 @Injectable({
   providedIn: 'root'
