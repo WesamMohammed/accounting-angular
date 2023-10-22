@@ -28,7 +28,7 @@ import { UsersComponent } from './users/users.component';
 import { ProductComponent } from './product/product.component';
 import { ReturnSalesComponent } from './ReturnSales/ReturnSales.component';
 import { CustomerComponent } from './Customer/Customer.component';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 
 
@@ -62,13 +62,7 @@ SalesViewComponent,
     HttpClientModule,
     //MatSelectModule,
     NgbModule,
-    NgxDatatableModule.forRoot({
-      messages: {
-        emptyMessage: 'No data to display', // Message to show when array is presented, but contains no values
-        totalMessage: 'total', // Footer total message
-        selectedMessage: 'selected' // Footer selected message
-      }
-    }),
+   
     
     ModalModule.forChild(),
 
