@@ -43,19 +43,26 @@
           <td>{{ user.email }}</td>
 
           <td>
-            <button *ngIf="canEditUsers()" type="button"
-              class="btn btn-sm bg-secondary"
-              (click)="showModal(UsersModal,user)"
-             >
-              <i class="fas fa-pencil-alt"></i>
-              Edit
-            </button>
-            <button type="button"
-              class="btn btn-sm bg-danger mx-2"
-              (click)="delete(user)">
-              <i class="fas fa-trash"></i>
-              Delete
-            </button>
+            <div class="dropdown">
+              <button class="border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-tools"></i>
+              </button>
+              <ul class="dropdown-menu action-tools">
+                <li><a class="dropdown-item" *ngIf="canEditUsers()" type="button"
+                  
+                  (click)="showModal(UsersModal,user)"  href="javascript:;"> 
+                  <i class="fas fa-pencil-alt"></i>
+                </a></li>
+               
+                <li> <a  type="button" (click)="delete(user)" class=" dropdown-item" href="javascript:;">
+                  <i class="fas fa-trash"></i>
+                </a></li>
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </div>
+           
+           
+            
           </td>
         </tr>
       </tbody>
