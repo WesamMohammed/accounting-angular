@@ -4,9 +4,9 @@
       <div class="col-6">
         <h1> <span *ngIf="OperationType"> Return  </span> Sales  </h1>
       </div>
-      <div *ngIf="canCreatSales()" class="col-6 text-right">
+      <div *ngIf="canCreatSales()" class="col-6 text-right page-header-action">
         <a href="javascript:;"
-          class="btn btn-primary"
+          class="btn btn-primary "
           (click)="startNewSale()"
         >
 
@@ -25,13 +25,13 @@
         <h1 *ngIf="!isediting">  New <span *ngIf="OperationType">Return</span> Sales  </h1>
         <h1 *ngIf="isediting"> Edit  <span *ngIf="OperationType">Return</span> Sales  </h1>
       </div>
-      <div  class="col-6 text-right">
+      <div  class="col-6 text-right page-header-action">
         <a href="javascript:;"
-          class="btn btn-primary"
+          class="btn btn-outline-danger"
           (click)="getAllSales()"
         >
 
-          <i class="fa fa-plus-square"></i>
+          <i class="fa fa-close"></i>
         Close
         </a>
       </div>
@@ -41,11 +41,11 @@
 </div>
 
 
-<div class="card-body" *ngIf="canViewSales() && !isNewSale" >
-  <div class="table-responsive text-center">
+<div class="card-body shadow" *ngIf="canViewSales() && !isNewSale" >
+  <div class="table-responsive text-center ">
 
 
-    <div>
+    <!-- <div>
       <nav aria-label="Page navigation example text-center">
         <ul class="pagination">
           <li class="page-item"><a class="page-link"  [hidden]="page===1" (click)="page=page-1;changetable()" href="javascript:;">Previous</a></li>
@@ -53,7 +53,7 @@
           <li class="page-item"><a class="page-link" (click)="page=page+1;changetable()" href="javascript:;">Next</a></li>
         </ul>
       </nav>
-     </div>
+     </div> -->
     <table class="table table-striped table-bordered"
    >
       <thead class="bg-light">
@@ -110,26 +110,31 @@
 
 
           <td>
-            <button *ngIf="true" type="button"
-              class="btn btn-sm bg-secondary"
-              (click)="startEditSale(sale)"
-             >
-              <i class="fas fa-pencil-alt"></i>
-              Edit
-            </button>
-            <button *ngIf="true" type="button"
-              class="btn btn-sm bg-secondary"
-              (click)="print(sale)"
-             >
-              <i class="fas fa-pencil-alt"></i>
-              print
-            </button>
-            <button type="button"
-              class="btn btn-sm bg-danger mx-2"
-             >
-              <i class="fas fa-trash"></i>
-              Delete
-            </button>
+            
+            <div class="dropdown">
+              <button class="border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-tools"></i>
+              </button>
+              <ul class="dropdown-menu action-tools">
+                <li><a class="dropdown-item" *ngIf="true" type="button"
+                  
+                  (click)="startEditSale(sale)"  href="javascript:;"> 
+                  <i class="fas fa-pencil-alt"></i>
+                </a></li>
+                <li> <a *ngIf="true" type="button"
+                  class="btn btn-sm bg-secondary"
+                  (click)="print(sale)" class=" dropdown-item" href="javascript:;">
+                  <i class="fas fa-print"></i>
+                </a></li>
+                <li> <a  class=" dropdown-item" href="javascript:;">
+                  <i class="fas fa-trash"></i>
+                </a></li>
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </div>
+         
+          
+          
           </td>
         </tr>
       </tbody>
@@ -142,7 +147,7 @@
   </div>
 </div>
 
-<div *ngIf="isNewSale" class="card" style="margin: 20px;">
+<div *ngIf="isNewSale" class="card border-0 card shadow" style="margin: 20px;">
 
 
   <div class="card-body">
@@ -155,8 +160,8 @@
 
 <fieldset [disabled]="submitting">
   <div class="row">
-    <div class="col-lg-6">
-      <div class="form-group col">
+    <div class="col-sm-4">
+      <div class="form-group invoice-master-filed col">
         <label for="">Customer</label>
       <select class="form-control"  formc="control" [required]="!!salesInvoice?.invoiceType" id="customer" name="customer" [(ngModel)]="salesInvoice.customerId">
         <option  *ngFor="let customer of customers"  [ngValue]="customer.id">
@@ -166,7 +171,7 @@
 
 
       </div>
-      <div class="form-group col" *ngIf="!OperationType">
+      <div class="form-group invoice-master-filed col" *ngIf="!OperationType">
         <label for="">Madin Account</label>
       <select class="form-control" [required]="true" id="AccountMadin" name="AccountMadin" [(ngModel)]="salesInvoice.accountMadinId">
         <option  *ngFor="let account of accounts"  [ngValue]="account.id">
@@ -176,7 +181,7 @@
 
 
       </div>
-      <div class="form-group col" *ngIf="OperationType">
+      <div class="form-group invoice-master-filed col" *ngIf="OperationType">
         <label for="">Dain Account</label>
       <select class="form-control" [required]="true" id="AccountDain" name="AccountDain" [(ngModel)]="salesInvoice.accountDainId">
         <option  *ngFor="let account of accounts"  [ngValue]="account.id">
@@ -186,7 +191,7 @@
 
 
       </div>
-      <div class="form-group col">
+      <div class="form-group invoice-master-filed col">
         <label for="">Date</label>
         <input [required]="true" placeholder="Date"
           type="text"
@@ -197,7 +202,7 @@
 
         />
       </div>
-    <div class="form-group col" *ngIf="OperationType">
+    <div class="form-group invoice-master-filed col" *ngIf="OperationType">
       <label for="idForReturn">Sales Id</label>
       <select (change)="setIdForReturn()" class="form-control" [required]="true" id="idForReturn" name="idForReturn" [(ngModel)]="salesInvoice.idForReturn">
         <option  *ngFor="let Sale of AllSale"  [ngValue]="Sale.id">
@@ -206,8 +211,8 @@
       </select>
     </div>
     </div>
-    <div class="col-lg-6">
-      <div class="form-group col">
+    <div class="col-sm-4">
+      <div class="form-group invoice-master-filed col">
         <label for="">InvoiceType</label>
       <select class="form-control" [required]="true" id="invoiceType" (change)="setMadinAccount()"  name="invoiceType" [(ngModel)]="salesInvoice.invoiceType">
         <option  *ngFor="let invoiceType of invoceTypes"  [ngValue]="invoiceType.id">
@@ -217,7 +222,7 @@
 
 
       </div>
-      <div class="form-group col">
+      <div class="form-group invoice-master-filed col">
         <label for="">Store</label>
       <select aria-placeholder="Store" [required]="true" class="form-control" id="Store"  name="storeId" [(ngModel)]="salesInvoice.storeId">
         <option  *ngFor="let store of stores"  [ngValue]="store.id">
@@ -234,11 +239,12 @@
 <div class="row">
 <div class="col-lg-12">
 
-  <table class="table table-bordered">
+  <table class="table table-bordered table-sm text-center">
     <thead class="bg-primary text-white">
       <tr>
         <td style="width: 18%;">Product Name</td>
         <td style="width: 18%;">Unit</td>
+        
         <td>Price</td>
         <td>Quantity</td>
         <td>Total Price</td>
@@ -305,7 +311,7 @@
 <br>
 <div class="row">
 <div class="col-lg-4">
-  <div class="form-group">
+  <div class="form-group invoice-master-filed">
     <label for="">Total</label>
     <input
 
@@ -318,8 +324,8 @@
   </div>
 </div>
 
-<div class="col-lg-4">
-  <div class="form-group">
+<!-- <div class="col-lg-4">
+  <div class="form-group invoice-master-filed">
     <label for="">Tax</label>
     <input
       type="number"
@@ -330,7 +336,7 @@
   </div>
 </div>
 <div class="col-lg-4">
-  <div class="form-group">
+  <div class="form-group invoice-master-filed">
     <label for="">Total After Tax</label>
     <input
       type="number"
@@ -339,7 +345,7 @@
 
     />
   </div>
-</div>
+</div> -->
 </div>
 
 <div class="row">

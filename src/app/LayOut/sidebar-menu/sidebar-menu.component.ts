@@ -16,6 +16,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
  activatedMenuItems:MenuItem[]=[];
  routerEvents: BehaviorSubject<RouterEvent> = new BehaviorSubject(undefined);
  homeRoute = '/app/home';
+ isSideBarOpen=false;
   constructor(injector:Injector,private router:Router) {
 
     super(injector);
@@ -51,19 +52,19 @@ console.log('logOUUUUUUUUUt');
     return [
 
       new MenuItem("Home","/app/home","fas fa-home"),
-      new MenuItem("Sales","/app/sales","fas fa-home","Permission.Sales.View"),
+      new MenuItem("Sales","/app/sales","fas fa-cart-plus","Permission.Sales.View"),
 
-      new MenuItem("ReturnSales","/app/returnsales","fas fa-home","Permission.Sales.View"),
-      new MenuItem("Purchases","/app/purchases","fas fa-home","Permission.Purchases.View"),
-      new MenuItem("Products","/app/products","fas fa-home","Permission.Products.View"),
+      new MenuItem("ReturnSales","/app/returnsales","fas fa-cart-plus","Permission.Sales.View"),
+      new MenuItem("Purchases","/app/purchases","fas fa-cart-plus","Permission.Purchases.View"),
+      new MenuItem("Products","/app/products","fas fa-shopping-bag","Permission.Products.View"),
       new MenuItem("Accounts","/app/accounts","fas fa-home","Permission.Accounts.View"),
-      new MenuItem("Customers","/app/customers","fas fa-home","Permission.Customers.View"),
+      new MenuItem("Customers","/app/customers","fas fa-users","Permission.Customers.View"),
 
-      new MenuItem("Roles","/app/roles","fas fa-home","Permission.Roles.View"),
-      new MenuItem("Users","/app/users","fas fa-home","Permission.Users.View"),
+      new MenuItem("Roles","/app/roles","fas fa-universal-access","Permission.Roles.View"),
+      new MenuItem("Users","/app/users","fas fa-user-plus","Permission.Users.View"),
       new MenuItem("Multiple Level","","fas fa-circle","",[
 
-        new MenuItem("login","/auth/login","fas fa-home"),
+        new MenuItem("logout","/auth/logout","fas fa-home"),
       ])
 
 

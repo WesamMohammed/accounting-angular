@@ -2,3 +2,38 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.page-header-action{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.form-control{
+    border-radius:0%
+}
+tfoot{
+    display: flex;
+}
+.modal-content{
+    border-radius: 0%;
+}
+.table-responsive{
+    
+    overflow: visible;
+    
+}
+.action-tools{
+    --bs-dropdown-min-width: unset;
+    
+}
+/* .invoice-master-filed{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+} */
+/* .invoice-master-filed input,select{
+    
+    margin: 2px;
+    width: 50px;
+} */

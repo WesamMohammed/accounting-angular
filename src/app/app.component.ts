@@ -15,6 +15,8 @@ export class AppComponent {
 selectedLink:string;
 email=UserConstant.email;
 userName=UserConstant.userName;
+isSidebarOpend=false;
+isToggled=true;
 constructor(private authService:AuthService){
   console.log(UserConstant.email);
 
@@ -28,5 +30,11 @@ this.selectedLink=link;
   logout(){
 this.authService.logOut();
   }
+  sidebarToggle(){
+   this.isSidebarOpend=!this.isSidebarOpend;
+  }
+showitems(){
+this.isToggled=!this.isToggled;
+}
 }
 

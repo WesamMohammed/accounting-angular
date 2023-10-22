@@ -1,8 +1,69 @@
+#sidbar-controller{
+  border: none;
+  margin: 12px 12px;
+}
+.top-menu{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-user{
+  
+  /* direction: rtl; */
+  position: absolute;
+  right: 0px;
+}
+.nav-user button{
+  background-color: transparent;
+    color: #f3eaeaed;
+    border: none;
+}
+#sidbar{
+  
+    
+  background-color: #141414e0;
+  height: 100%;
+  flex: auto;
+
+}
+.main{
+  display: flex;
+  
+  
+}
+#main-body{
+  padding: 10px;
+  flex:75% ;
+}
+.nav-user-ul{
+
+  position: absolute;
+    right: 0px;
+    left: auto;
+
+}
+#main-footer{
+  
+  bottom: 0;
+}
+
+.sidebare-close{
+  display: none;
+
+}
+/* .main-expand{
+  margin-left: 0%;
+} */
 
 h1, h3 {
   color: green;
   font-family: "Roboto", sans-serif;
   text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .mat-tree {

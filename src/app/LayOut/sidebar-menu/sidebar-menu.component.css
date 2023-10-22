@@ -1,19 +1,27 @@
+
 .menu-item{
   cursor: pointer;
+  
 }
 .menu-item:havore{
 
 
 }
+.menu-items{
+  /* font-size: x-large; */
+}
 .menu-items li:hover{
   background-color: white ;
   color: black;
+  
 }
 .selected{
   background-color: blue;
   color: aliceblue;
 }
-
+/* .nav-link{
+  color: #d9e3f2;
+} */
 ul,#myUL{
   list-style-type: none;
 }

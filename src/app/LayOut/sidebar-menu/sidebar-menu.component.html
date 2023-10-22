@@ -1,4 +1,5 @@
 
+
 <nav class="mt-2">
   <ul
     class="nav nav-pills nav-sidebar flex-column nav-flat menu-items"
@@ -28,8 +29,9 @@
       [routerLink]="item.route"
       [class.selected]="item.isActive"
     >
-      <i class="nav-icon {{ item.icon }}"></i>
+      
       <p>
+        <i ngClass=" {{ item.icon }}" ></i>
         {{ item.label }}
       </p>
     </span>
@@ -62,6 +64,7 @@
     </ul>
   </li>
 </ng-template>
+
 <!--
 <ul class="active">
   <ng-container *ngFor="let item of menuItems"  [ngTemplateOutlet]="treeNode" [ngTemplateOutletContext]="{$implicit:item}">
