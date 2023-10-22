@@ -1,34 +1,27 @@
-# Use an official Node.js LTS (Long Term Support) image as the base image
+
 FROM node:18.17.0 AS build
 
-# Set the working directory inside the container
+
 RUN mkdir -p /app
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install --legacy-peer-deps
-# Copy package.json and package-lock.json files to leverage Docker cache
 
 
-# Install project dependencies
+
+
 
 COPY . .
 RUN npx ng build 
 
-# Copy the entire project to the container
-#COPY . .
-
-# Build the Angular application with production configuration
-
-#RUN npm run build --prod
-
 
 FROM nginx:alpine
 
-# Copy the built Angular app from the previous stage to the NGINX web server directory
+
 COPY --from=build /app/dist/* /usr/share/nginx/html/
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80 for the NGINX server
+
 EXPOSE 80
 
-# CMD instruction is not required as the default CMD for the nginx:alpine image serves the Angular app
+
