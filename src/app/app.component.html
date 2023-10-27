@@ -4,7 +4,7 @@ email:{{email}}
 <button (click)="logout()">Logout</button>
 </div> -->
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+<nav id="top-navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
 <button id="sidbar-controller" (click)="sidebarToggle()"  >☰</button>
 
 
@@ -26,7 +26,7 @@ email:{{email}}
 
 </nav>
 <div class="main" >
-<div id="sidbar" [ngClass]="{'sidebare-close':isSidebarOpend}">
+<div id="sidebar"  [ngClass]="{'sidebar-close':isSidebarClose,'sidebar-open':!isSidebarClose}">
   
 
 
@@ -37,15 +37,25 @@ email:{{email}}
 
 </div>
 
-<div id="main-body" [ngClass]="{'main-shrink':!isSidebarOpend,'main-expand':isSidebarOpend}">
+<div id="main-body" [ngClass]="{'main-shrink':!isSidebarClose,'main-expand':isSidebarClose}">
   
  
   
   
     <router-outlet></router-outlet>
+    <footer id="main-footer" class=" row"  style="width: 100%; height: auto;">
+      <strong style="text-align: center;">
+        Copyright &copy; {{ "wesam" }}
+        <a href="javascript:;">Accounting</a>
+        <b>{{ "Version  1.0.0"  }} </b>
+      </strong>
+      <div class="float-right d-none d-sm-inline-block">
+    
+      </div>
+    </footer>
+</div>
 
 </div>
-</div>
 
 
 
@@ -53,13 +63,4 @@ email:{{email}}
 
 
 
-<footer id="main-footer" class=" row"  style="width: 100%; height: auto;">
-  <strong style="text-align: center;">
-    Copyright &copy; {{ "wesam" }}
-    <a href="javascript:;">Accounting</a>
-    <b>{{ "Version  1.0.0"  }} </b>
-  </strong>
-  <div class="float-right d-none d-sm-inline-block">
 
-  </div>
-</footer>

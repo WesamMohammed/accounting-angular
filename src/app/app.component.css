@@ -17,13 +17,19 @@
     color: #f3eaeaed;
     border: none;
 }
-#sidbar{
-  
-    
-  background-color: #141414e0;
-  height: 100%;
-  flex: auto;
+#sidebar{
 
+  background-color: #141414e0;
+  height: 100vh;
+  flex: auto;
+  overflow-y: auto;
+
+}
+#top-navbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
 }
 .main{
   display: flex;
@@ -42,11 +48,11 @@
 
 }
 #main-footer{
-  
+  position: sticky;
   bottom: 0;
 }
 
-.sidebare-close{
+.sidebar-close{
   display: none;
 
 }
@@ -62,6 +68,9 @@ h1, h3 {
 @media screen and (max-width: 600px) {
   .main {
     flex-direction: column;
+    height: auto;
+  }
+  #sidebar{
     height: auto;
   }
 }
