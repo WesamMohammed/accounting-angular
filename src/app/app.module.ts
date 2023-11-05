@@ -28,6 +28,8 @@ import { UsersComponent } from './users/users.component';
 import { ProductComponent } from './product/product.component';
 import { ReturnSalesComponent } from './ReturnSales/ReturnSales.component';
 import { CustomerComponent } from './Customer/Customer.component';
+import { SharedModule } from './shared/shared.module';
+import { StoreModule } from './pages/store/store.module';
 
 
 
@@ -62,7 +64,8 @@ SalesViewComponent,
     HttpClientModule,
     //MatSelectModule,
     NgbModule,
-   
+    SharedModule,
+    StoreModule,
     
     ModalModule.forChild(),
 

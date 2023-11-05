@@ -1,96 +1,26 @@
-
-
 <nav class="mt-2">
-  <ul
-    class="nav nav-pills nav-sidebar flex-column nav-flat menu-items"
-    data-widget="treeview"
-    role="menu"
-    data-accordion="false"
-  >
+  <ul class="nav nav-pills nav-sidebar flex-column nav-flat menu-items" data-widget="treeview" role="menu" data-accordion="false">
     <ng-container *ngFor="let item of menuItems">
-      <ng-container
-        *ngTemplateOutlet="sidebarInner; context: { item: item }"
-      ></ng-container>
+      <ng-container *ngTemplateOutlet="sidebarInner; context: { item: item }"></ng-container>
     </ng-container>
   </ul>
 </nav>
 
 <ng-template #sidebarInner let-item="item">
-  <li
-    *ngIf="isMenuItemVisible(item)"
-    class="nav-item"
-
-      >
-
-    <span
-      *ngIf="item.route && !item.children"
-      class="nav-link menu-item "
-      target="_blank"
-      [routerLink]="item.route"
-      [class.selected]="item.isActive"
-    >
-      
-      <p>
-        <i ngClass=" {{ item.icon }}" ></i>
+  <ng-container *ngIf="isMenuItemVisible(item)">
+    <li class="nav-item">
+      <span *ngIf="item.route && !item.children" class="nav-link menu-item" target="_blank" [routerLink]="item.route" [class.selected]="item.isActive">
+        <i [ngClass]="item.icon"></i>
         {{ item.label }}
-      </p>
-    </span>
-    <span class=" caret nav-link"
-      *ngIf="!item.route && item.children"
-
-
-
-      (click)="toggle($event)"
-    >
-
-
-
-        {{ item.label }}
-
-
-    </span>
-    <ul
-      *ngIf="item.children"
-      class="nav nav-treeview nested"
-
-    >
-
-
-      <ng-container *ngFor="let item of item.children">
-        <ng-container
-          *ngTemplateOutlet="sidebarInner; context: { item: item }"
-        ></ng-container>
-      </ng-container>
-    </ul>
-  </li>
-</ng-template>
-
-<!--
-<ul class="active">
-  <ng-container *ngFor="let item of menuItems"  [ngTemplateOutlet]="treeNode" [ngTemplateOutletContext]="{$implicit:item}">
-
-  </ng-container>
-
-</ul>
-
-<ng-template #treeNode let-data>
-  <li>
-    <span class="caret" *ngIf="data.children.length>0; else sp" (click)="toggle($event)">{{data.label}}</span>
-    <ng-template #sp>
-      <span>
-        {{data.label}}
       </span>
-    </ng-template>
-    <ng-container *ngIf="data.children">
-      <ul class="nested">
-        <ng-container *ngFor="let child of data.children" [ngTemplateOutlet]="treeNode" [ngTemplateOutletContext]="{$implicit:child}">
-
+      <span class="caret nav-link" *ngIf="!item.route && item.children" (click)="toggle($event)">
+        {{ item.label }}
+      </span>
+      <ul *ngIf="item.children" class="nav nav-treeview nested">
+        <ng-container *ngFor="let childItem of item.children">
+          <ng-container *ngTemplateOutlet="sidebarInner; context: { item: childItem }"></ng-container>
         </ng-container>
-
       </ul>
-    </ng-container>
-
-  </li>
-
-
-</ng-template> -->
+    </li>
+  </ng-container>
+</ng-template>

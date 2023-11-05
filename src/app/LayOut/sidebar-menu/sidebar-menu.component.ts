@@ -59,7 +59,8 @@ console.log('logOUUUUUUUUUt');
       new MenuItem("Products","/app/products","fas fa-shopping-bag","Permission.Products.View"),
       new MenuItem("Accounts","/app/accounts","fas fa-home","Permission.Accounts.View"),
       new MenuItem("Customers","/app/customers","fas fa-users","Permission.Customers.View"),
-
+      new MenuItem("Suppliers","/app/suppliers","fa-solid fa-people-carry-box","Permission.Customers.View"),
+      new MenuItem("Stores","/app/stores","fa-solid fa-warehouse","Permission.Users.View"),
       new MenuItem("Roles","/app/roles","fas fa-universal-access","Permission.Roles.View"),
       new MenuItem("Users","/app/users","fas fa-user-plus","Permission.Users.View"),
       new MenuItem("Multiple Level","","fas fa-circle","",[
@@ -67,7 +68,7 @@ console.log('logOUUUUUUUUUt');
         new MenuItem("logout","/auth/logout","fas fa-home"),
       ])
 
-
+      
 
 
   ];

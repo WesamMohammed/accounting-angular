@@ -1,0 +1,130 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{getTitle}}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form action="" [formGroup]="form">
+   
+    <!-- <div class="row g-3">
+  
+      <div class="col-6 ">
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="name" class="required">Name</label>
+          <input pInputText
+          formControlName="name"
+          
+          placeholder="name"
+          [ngClass]="{'ng-invalid ng-dirty':_form.name.errors && (_form.name.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.name.hasError('required') && (_form.name.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+      </div>
+  
+    
+      <div class="col-6">
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="Country" class="required">Country</label>
+          <input pInputText
+          formControlName="country"
+          
+          placeholder="country"
+          [ngClass]="{'ng-invalid ng-dirty':_form.country.errors && (_form.country.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.country.hasError('required') && (_form.country.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+      </div>
+    
+    </div>
+   -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="name" class="required">Name</label>
+          <input pInputText
+          formControlName="name"
+          
+          placeholder="name"
+          [ngClass]="{'ng-invalid ng-dirty':_form.name.errors && (_form.name.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.name.hasError('required') && (_form.name.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="country" class="required">Country</label>
+          <input pInputText
+          formControlName="country"
+          
+          placeholder="country"
+          [ngClass]="{'ng-invalid ng-dirty':_form.country.errors && (_form.country.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.name.hasError('required') && (_form.country.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="city" class="required">City</label>
+          <input pInputText
+          formControlName="city"
+          
+          placeholder="city"
+          [ngClass]="{'ng-invalid ng-dirty':_form.city.errors && (_form.city.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.city.hasError('required') && (_form.city.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+
+
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="email" class="required">Email</label>
+          <input pInputText
+          formControlName="email"
+          
+          placeholder="email"
+          [ngClass]="{'ng-invalid ng-dirty':_form.email.errors && (_form.email.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.email.hasError('required') && (_form.email.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="phone" class="required">Phone</label>
+          <input pInputText
+          formControlName="phone"
+          
+          placeholder="phone"
+          [ngClass]="{'ng-invalid ng-dirty':_form.phone.errors && (_form.phone.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.phone.hasError('required') && (_form.phone.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+        <div formGroupName="account" class="d-flex flex-column gap-2">
+          <label for="">Main Account </label>
+        <select formControlName="parentId" class="form-control" [disabled]="id?true:false">
+          <option  *ngFor="let MainCustomerAccount of MainAccountsCustomerType" [ngValue]="MainCustomerAccount.id">
+            {{MainCustomerAccount.accountNumber+'-'+MainCustomerAccount.name}}
+          </option>
+        </select>
+
+
+        </div>
+
+      </div>
+    </div>
+  
+  
+  <div class="mt-5">
+    <div class="d-flex justify-content-end gap-2">
+      
+      <button type="button" label="Save" class="btn btn-primary" [disabled]="!form.valid || isSubmitted" (click)="submit()">Save</button>
+      
+    </div>
+  </div>
+  
+  </form>
+</div>
+
+

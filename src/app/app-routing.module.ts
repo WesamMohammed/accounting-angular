@@ -27,7 +27,14 @@ const routes: Routes = [
   {path:'users',component:UsersComponent,canActivate:[AppRouteGuard],data:{permission:'Permission.Users.View'}},
   {path:'home',component:HomeComponent,canActivate:[AppRouteGuard]},
  // {path:'saleview/:id',component:SalesViewComponent}
+ { path:"stores",
+ loadChildren: ()=>import('./pages/store/store.module').then(m=>m.StoreModule),
+ 
+},
+{ path:"suppliers",
+loadChildren: ()=>import('./pages/supplier/supplier.module').then(m=>m.SupplierModule),
 
+},
 
 
 ]},

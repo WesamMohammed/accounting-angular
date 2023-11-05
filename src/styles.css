@@ -17,11 +17,14 @@ tfoot{
 .modal-content{
     border-radius: 0%;
 }
-.table-responsive{
+ .modal-dialog{
+    top: 25%;
+}
+/* .table-responsive{
     
     overflow-x: auto;
     
-}
+} */
 .action-tools{
     --bs-dropdown-min-width: unset;
     

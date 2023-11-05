@@ -22,6 +22,8 @@ import { RootRoutingModule } from './root-routing.module';
 import { resolve } from 'path';
 import { RootComponent } from './root.component';
 import { CommonModule, DatePipe } from '@angular/common';
+import { SpinnerService } from './app/shared/services/spinner.service';
+import { SharedModule } from './app/shared/shared.module';
 
 
 // }
@@ -65,6 +67,7 @@ export function intializeApp(service:ApiService){
     RootRoutingModule,
     AppModule,
     AuthModule,
+    
 
   ],
   declarations: [RootComponent],

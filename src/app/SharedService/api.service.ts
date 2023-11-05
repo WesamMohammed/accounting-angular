@@ -125,6 +125,12 @@ getAllCustomers(customer?:Customer):Observable<any>{
   GetMainAccountsCustomerType():Observable<any>{
     return this.http.get<any>(BaseUrl+"/Customer/GetMainAccountsCustomerType");
   }
+  Get(controller:string,actionFunc:string):Observable<any>{
+    return this.http.get<any>(BaseUrl+`/${controller}/${actionFunc}`);
+  }
+  GetById(controller:string,actionFunc:string,id:number):Observable<any>{
+    return this.http.get<any>(BaseUrl+`/${controller}/${actionFunc}?id=${id}`);
+  }
   getAllSupplires():Observable<any>{
 
     return this.http.get<any>(BaseUrl+"/Customer/GetAllSupplires");
@@ -132,6 +138,11 @@ getAllCustomers(customer?:Customer):Observable<any>{
 getAllStores():Observable<any>{
 
   return this.http.get(BaseUrl+"/Store/GetAllStores");
+}
+
+AddStore(data:any):Observable<any>{
+
+  return this.http.post(BaseUrl+"/Store/AddStore",data);
 }
 
 addPurchases(purchases:InvoiceMaster):Observable<PurchasesInvoice>{

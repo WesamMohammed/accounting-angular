@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form action="" [formGroup]="form">
+   
+    <div class="row g-3">
+  
+      <div class="col-12 ">
+        <div class="d-flex flex-column gap-2">
+          <label htmlFor="name" class="required">name</label>
+          <input pInputText
+          formControlName="name"
+          
+          placeholder="name"
+          [ngClass]="{'ng-invalid ng-dirty':_form.name.rrors && (_form.name.touched || isSubmitted)}"/>
+          <span class="text-danger text-small" *ngIf="_form.name.hasError('required') && (_form.name.touched || isSubmitted)">
+            Required
+          </span>
+        </div>
+      </div>
+  
+      <div class="col-12">
+        <div class="d-flex flex-column gap-2 py-2">
+   
+         
+        </div>
+      </div>
+    
+    
+    </div>
+  
+  
+  
+  
+  <div class="mt-5">
+    <div class="d-flex justify-content-end gap-2">
+      
+      <button type="button" label="Save" class="btn btn-primary" [disabled]="!form.valid || isSubmitted" (click)="submit()">Save</button>
+      
+    </div>
+  </div>
+  
+  </form>
+</div>
+
+
+<!-- <form action="" [formGroup]="form">
+  <div class="row">
+
+    <div class="form-group ">
+      <label for="name">Name</label>
+      <input  formControlName="name" name="name" type="text" [disabled]="" placeholder="Name" >
+    </div>
+
+  </div>
+  <button type="button" (click)="submit()" title="Save"></button>
+</form> -->
