@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; height: 100vh; width: 100vw;}
 @import "~@fortawesome/fontawesome-free/css/all.css";
 .page-header-action{
     display: flex;
@@ -28,4 +28,9 @@ tfoot{
 .action-tools{
     --bs-dropdown-min-width: unset;
     
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }

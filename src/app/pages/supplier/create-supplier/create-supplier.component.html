@@ -103,7 +103,7 @@
         </div>
         <div formGroupName="account" class="d-flex flex-column gap-2">
           <label for="">Main Account </label>
-        <select formControlName="parentId" class="form-control" [disabled]="id?true:false">
+        <select formControlName="parentId" class="d-flex flex-column gap-2" [disabled]="id?true:false">
           <option  *ngFor="let MainCustomerAccount of MainAccountsCustomerType" [ngValue]="MainCustomerAccount.id">
             {{MainCustomerAccount.accountNumber+'-'+MainCustomerAccount.name}}
           </option>

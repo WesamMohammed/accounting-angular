@@ -26,18 +26,19 @@ email:{{email}}
 
 </nav>
 <div class="main" >
-<div id="sidebar"  [ngClass]="{'sidebar-close':isSidebarClose,'sidebar-open':!isSidebarClose}">
+  <sidebar-menu [ngClass]="{sidebar:isSidebarClose,active:!isSidebarClose}"></sidebar-menu>
+<!-- <div id="sidebar"  >
   
 
 
-
-    <sidebar></sidebar>
+ 
+     <sidebar></sidebar> 
    
 
 
-</div>
+</div> -->
 
-<div id="main-body" [ngClass]="{'main-shrink':!isSidebarClose,'main-expand':isSidebarClose}">
+<div id="main-body">
   
  
   
